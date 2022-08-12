@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="nav">
-        <div id="left-nav">
+    <div class="nav">
+        <!-- <div id="left-nav">
             <img src="./assets/icon-menu.svg" alt="icon-menu">
             <h1 id="header-text">Markdown</h1>
             <h1 id="header-text">|</h1>
@@ -23,36 +23,32 @@
         <div id="right-nav">
             <img src="./assets/icon-delete.svg" alt="delete file icon">
             <button id="header-button"> <span><img src="./assets/icon-save.svg" alt="save icon"></span> Save Changes</button>
-        </div>
+        </div> -->
+        <ul>
+            <li class="header-left" style="margin-top: 10px;"><img src="./assets/icon-menu.svg" alt="icon-menu"></li>
+            <li class="header-left"><h1>Markdown</h1></li>
+            <li class="header-left" style="margin-top: 10px;"><img src="./assets/icon-document.svg" alt="document icon"></li>
+            <li class="header-left-stacked"style="margin-top: 10px;">Document Name</li>
+            <li class="header-right"><span class="header-button"><img src="./assets/icon-save.svg" alt="save icon"> Save Changes</span></li>
+            <li class="header-right" style="margin-top: 10px;"><img src="./assets/icon-delete.svg" alt="delete file icon"></li>
+            
+        </ul>
         
     </div>
-    <div id="container">
-        <div class="left-side">
+    <div class="container">
+        <div class="left-body">
             <div id="left-body-header">
                 <h4>Markdown</h4>
             </div>
-            <div id="main-content-left">
-                <p>
-                    # Welcome to Markdown 
-
-                    Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.
-
-                    ## How to use this? 
-
-                    1. Write markdown in the markdown editor window.
-                    2. See the rendered markdown in the previous window. 
-
-                    ### Features
-
-                    -Create headings, paragraphs, links, blockquotes, inline-code, code blocks, and lists. 
-                </p>
-            </div>
+            <form id="main-content-left">
+                <textarea class="content"></textarea>
+            </form>
         </div>
         
-        <div class="right-side">
+        <div class="right-body">
             <div id="right-body-header">
-                <h4>Preview</h4>
-                <img src="./assets/icon-show-preview.svg" alt="show icon">
+                <h4 class="preview">Preview</h4>
+                <img src="./assets/icon-show-preview.svg"  alt="show icon">
             </div>
             
         </div>
