@@ -55,10 +55,6 @@ li {
     width: 50%;
     margin-right: 2px;
 }
-
-/* .right-body {
-    float: right;
-} */
 #left-body-header {
     color: white;
     display: flex;
@@ -66,10 +62,6 @@ li {
     align-items: center;
     margin-top: 10px;
 }
-/* .preview {
-    display: flex;
-    align-items: flex-start;
-} */
 #right-body-header {
     color: white;
     display: flex;
