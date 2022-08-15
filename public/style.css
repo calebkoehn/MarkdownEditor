@@ -54,11 +54,12 @@ li {
 .left-body {
     float: left;
     width: 50%;
-    margin-right: 1px;
+    padding-left: 10px;
 }
 .right-body {
     float: right;
     width: 50%;
+    padding-right: 10px;
 }
 #left-body-header {
     color: white;
@@ -75,7 +76,7 @@ li {
     margin-top: 10px;
     padding-right: 10px;
 }
-.editor {
+.text-editor {
     background-color: black;
     color: grey;
     height: 75vh;

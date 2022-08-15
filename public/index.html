@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <div class="nav">
         <ul>
             <li class="header-left" style="margin-top: 10px; "><img src="./assets/icon-menu.svg" alt="icon-menu"></li>
@@ -24,7 +25,7 @@
             <div id="left-body-header">
                 <h4>Markdown</h4>
             </div>
-            <textarea class="editor"></textarea>
+            <textarea class="text-editor"></textarea>
         </div>
         
         <div class="right-body">
@@ -32,14 +33,11 @@
                 <h4>Preview</h4>
                 <img src="./assets/icon-show-preview.svg"  alt="show icon">
             </div>
-            <textarea class="preview">
-            testing
-            testing
-            testing
-            testing
-            </textarea>
+            <div class="preview">
+            </div>
         </div>
     </div>
-    
+    <script src="showdown.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
