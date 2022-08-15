@@ -10,7 +10,7 @@
     background-color: black;
 }
 .container {
-    height: 100vh;
+    height: 125vh;
     width: 100%;
     display: flex;
     background-color: #151619;
@@ -79,7 +79,7 @@ li {
 .text-editor {
     background-color: black;
     color: grey;
-    height: 75vh;
+    height: 100%;
     width: 100%;
     border: none;
     margin-top: 2%;
@@ -87,7 +87,7 @@ li {
 .preview {
     background-color: black;
     color: grey;
-    height: 75vh;
+    height: 100%;
     width: 100%;
     border: none;
     margin-top: 2%;
