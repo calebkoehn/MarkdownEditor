@@ -38,6 +38,7 @@ if (storedMarkdown) {
     
     saveChange.value = storedMarkdown;
     renderPreview(storedMarkdown);
+    textEditor.value = (storedMarkdown);
 };
 
 const storedFileName = window.localStorage.getItem('file');
@@ -50,7 +51,8 @@ if (storedFileName) {
 // deleteButton = window.localStorage.clear();
 
 deleteButton.addEventListener('click', evt => {
-    
+
     window.localStorage.clear();
+
 });
 
