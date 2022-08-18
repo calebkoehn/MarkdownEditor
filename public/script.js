@@ -19,14 +19,16 @@ textEditor.addEventListener('keyup',evt => {
 });
 fileName.addEventListener('keyup', evt => {
     const {value} = evt.target;
-    window.localStorage.setItem('file',value);
+    // window.localStorage.setItem('file',value);
 
     renderFileName(value);
 });
 
 saveChange.addEventListener('click', evt => {
-    const {value} = evt.target;
+    const value = textEditor.value;
+    const fileValue = fileName.value;
     window.localStorage.setItem('markdown', value);
+    window.localStorage.setItem('file',fileValue);
 })
 
 const storedMarkdown = window.localStorage.getItem('markdown');
