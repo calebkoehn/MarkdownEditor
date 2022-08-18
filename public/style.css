@@ -57,6 +57,7 @@ li {
 } 
 .delete-button {
     background-color: black;
+    border: none;
 }
 
 .left-body {
@@ -99,4 +100,50 @@ li {
     width: 100%;
     border: none;
     margin-top: 2%;
+}
+
+@media only screen and (max-width: 600px){
+    h1.header-name{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    span.document-name{
+        display: none;
+    }
+}
+@media only screen and (max-width: 600px){
+    textarea.file{
+        margin-top: -15px;
+    }
+}
+
+@media only screen and (max-width: 710px){
+    button.header-button{
+        font-size: 0%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    h4.preview-text{
+        display: none;
+    }
+}
+@media only screen and (max-width: 600px){
+    div.preview{
+        display: none;
+    }
+}
+@media only screen and (max-width: 600px){
+    div.left-body{
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+@media only screen and (max-width: 600px){
+    div.right-body{
+        display: none;
+    }
 }
