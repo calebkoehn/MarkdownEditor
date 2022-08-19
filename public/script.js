@@ -53,6 +53,5 @@ if (storedFileName) {
 deleteButton.addEventListener('click', evt => {
 
     window.localStorage.clear();
-
 });
 
