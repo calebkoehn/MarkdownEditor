@@ -125,7 +125,7 @@ li {
     }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 710px){
     h4.preview-text{
         display: none;
     }
@@ -152,5 +152,11 @@ li {
 @media only screen and (min-width: 600px){
     span.preview-mobile{
         display: none;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    span.document-icon{
+        margin-left: -25px;
     }
 }
