@@ -2,7 +2,6 @@ const textEditor = document.querySelector(".text-editor");
 const preview = document.querySelector(".preview");
 const fileName = document.querySelector(".file");
 const saveChange = document.querySelector(".header-button");
-const deleteButton = document.querySelector(".delete-button");
 const converter = new showdown.Converter();
 
 
@@ -47,11 +46,3 @@ if (storedFileName) {
     fileName.value = storedFileName;
     renderFileName(storedFileName);
 };
-
-// deleteButton = window.localStorage.clear();
-
-deleteButton.addEventListener('click', evt => {
-
-    window.localStorage.clear();
-});
-
