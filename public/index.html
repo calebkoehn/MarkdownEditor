@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Markdown</title>
+    <script src="https://unpkg.com/vue@2"></script>
+    <script src="https://unpkg.com/marked@0.3.6"></script>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     
@@ -14,8 +17,8 @@
             <li class="header-left" style="margin-top: 10px; "><img src="./assets/icon-menu.svg" alt="icon-menu"></li>
             <li class="header-left"><h1 class="header-name">Markdown</h1></li>
             <li class="header-left" style="margin-top: 10px;"><span class="document-icon"><img src="./assets/icon-document.svg" alt="document icon"></span></li>
-            <li class="header-left-stacked"style="margin-top: 10px;"><span class="document-name">Document Name</span><br><textarea class="file" style="background-color: black;border: 0px; color: white;" rows="2" cols="12"></textarea></li>
-            <li class="header-right"><button class="header-button"><img src="./assets/icon-save.svg" alt="save icon"> Save Changes</button></li>
+            <li class="header-left-stacked"style="margin-top: 10px;"><span class="document-name">Document Name</span><br><textarea :value="file" class="file" style="background-color: black;border: 0px; color: white;" rows="2" cols="12"></textarea></li>
+            <li class="header-right"><button @click="persist" class="header-button" ><img src="./assets/icon-save.svg" alt="save icon"> Save Changes</button></li>
             <li class="header-right" style="margin-top: 10px;"><button class="delete-button" onclick="window.localStorage.clear();"><img src="./assets/icon-delete.svg" alt="delete file icon"></button></li>
         </ul>
         
@@ -26,7 +29,8 @@
                 <h4>Markdown</h4>
                 <span class="preview-mobile"><img src="./assets/icon-show-preview.svg"  alt="show icon"></span>
             </div>
-            <textarea class="text-editor"></textarea>
+            <!-- <textarea class="text-editor"></textarea> -->
+            <textarea class="editor" :value="input" @input="update"></textarea>
         </div>
         
         <div class="right-body">
@@ -34,12 +38,13 @@
                 <h4 class="preview-text">Preview</h4>
                 <img src="./assets/icon-show-preview.svg"  alt="show icon">
             </div>
-            <div class="preview"></div>
+            <!-- <div class="preview"></div> -->
+            <div class="preview" v-html="compiledPreview"></div>
         </div>
     </div>
-
+<!-- 
     <script src="showdown.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js"></script> -->
 
     <script>
         new Vue({
@@ -47,11 +52,32 @@
             data: {
                 input: ""
             },
+            mounted () {
+                // if (localStorage.editor) {
+                //     this.input = localStorage.editor;
+                // }
+                // if (localStorage.file) {
+                //     this.file = localStorage.file;
+                // }
+                if (localStorage.getItem('storedMarkdown')){
+                    this.input = JSON.parse(localStorage.getItem('storedMarkdown'))
+                }
+            },
             computed: {
-
+                compiledPreview: function () {
+                    return marked(this.input, {sanitize: true});
+                }
             },
             methods: {
-
+                update: function (evt) {
+                    this.input = evt.target.value;
+                },
+                persist () {
+                    // localStorage.editor = this.input;
+                    // localStorage.file = this.file;
+                    const parsed = JSON.stringify(this.input);
+                    localStorage.setItem('storedMarkdown', parsed);
+                }
             }
         });
     </script>
